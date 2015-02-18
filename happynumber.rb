@@ -1,3 +1,5 @@
+require 'pry'
+
 class HappyNumber
     def initialize(input)
         @input = input
@@ -8,7 +10,7 @@ class HappyNumber
         if @input.is_a? Integer
             separateNumber(@input)
         else
-            return "It's a #{@input.class}"
+            puts "It's a #{@input.class}"
         end
     end
 
@@ -33,10 +35,11 @@ class HappyNumber
     def checkHappy(number)
         if number == 1
             puts "It's a happy number"
+            return 1
         else
             separateNumber(number)
         end
     end
 end
 
-HappyNumber.new(23)
+HappyNumber.new(19)
