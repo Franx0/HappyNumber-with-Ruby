@@ -18,6 +18,9 @@ describe HappyNumber do
         it "should be an array of numbers" do
             @happyNumber.separateNumber(@input).should == [1, 9]
         end
+        it "should be called 25 times" do
+            @happyNumber.stub(:separateNumber).exactly(25).times
+        end
     end
 
     describe "squareNumber" do

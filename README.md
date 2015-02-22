@@ -6,4 +6,6 @@ If you can check it, it is a happy number.
 
 The initial number has to be a positive integer so you have to test it before execute the function.
 
+You can operate the number 25 times maximum.
+
 I am using Rspec to test this exercise.

@@ -3,6 +3,7 @@ require 'pry'
 class HappyNumber
     def initialize(input)
         @input = input
+        @counter = 0
         checkNumber
     end
 
@@ -15,9 +16,15 @@ class HappyNumber
     end
 
     def separateNumber(numbers)
-        arNumbers = numbers.to_s.split(//).map{ |x| x.to_i }
-        squareNumber(arNumbers)
-        return arNumbers
+
+        if @counter <= 25
+            @counter += 1
+            arNumbers = numbers.to_s.split(//).map{ |x| x.to_i }
+            squareNumber(arNumbers)
+            return arNumbers
+        else
+            puts "It's not a happy number"
+        end
     end
 
     def squareNumber(arrayNumbers)
@@ -26,14 +33,14 @@ class HappyNumber
         return arNumSquare
     end
 
-    def addNumbers(sum)
-        number = sum.inject{ |sum, z| sum += z }
-        checkHappy(number)
-        return number
+    def addNumbers(sumArNumbers)
+        solution = sumArNumbers.inject{ |sum, z| sum += z }
+        checkHappy(solution)
+        return solution
     end
 
     def checkHappy(number)
-        if number == 1
+        if number === 1 
             puts "It's a happy number"
             return 1
         else
